@@ -7,13 +7,14 @@ const port =80;
 var mongoose= require('mongoose');
 // code to make a db named userDetails and to connect to it
 mongoose.connect('mongodb://localhost/userDetails',{useNewUrlParser:true})
-// We are creating a table or collection
+// We are creating a table or collection of the data we are about to enter
 var userSchema =new mongoose.Schema({
   firstName:String,
   lastName:String,
   contact:String,
   emailID:String
 })
+
 
 
 app.use('/static', express.static('public'));
