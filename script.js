@@ -3,18 +3,22 @@ const app= express();
 const path=require('path')
 const port =80;
 
-
+//code to add mongoose in the js file
 var mongoose= require('mongoose');
+// code to make a db named userDetails and to connect to it
 mongoose.connect('mongodb://localhost/userDetails',{useNewUrlParser:true})
-
-app.use('/static', express.static('public'));
-
+// We are creating a table or collection
 var userSchema =new mongoose.Schema({
   firstName:String,
   lastName:String,
   contact:String,
   emailID:String
 })
+
+
+app.use('/static', express.static('public'));
+
+
 
 var user= mongoose.model('User',userSchema)
 
